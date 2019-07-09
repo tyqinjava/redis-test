@@ -1,55 +1,16 @@
 package org.jtyq.jedis.spring.xml.cache;
 
 import org.springframework.cache.Cache;
+import org.springframework.cache.concurrent.ConcurrentMapCache;
 
-import java.util.concurrent.Callable;
+public class MyCache extends ConcurrentMapCache implements Cache {
 
-public class MyCache implements Cache {
-
-    private String name;
-
-    @Override
-    public String getName() {
-        return this.name;
+    public MyCache(String name) {
+        super(name);
     }
 
     @Override
-    public Object getNativeCache() {
-        return null;
-    }
-
-    @Override
-    public ValueWrapper get(Object o) {
-        return null;
-    }
-
-    @Override
-    public <T> T get(Object o, Class<T> aClass) {
-        return null;
-    }
-
-    @Override
-    public <T> T get(Object o, Callable<T> callable) {
-        return null;
-    }
-
-    @Override
-    public void put(Object o, Object o1) {
-
-    }
-
-    @Override
-    public ValueWrapper putIfAbsent(Object o, Object o1) {
-        return null;
-    }
-
-    @Override
-    public void evict(Object o) {
-
-    }
-
-    @Override
-    public void clear() {
-
+    public String toString() {
+        return this.getNativeCache().toString();
     }
 }

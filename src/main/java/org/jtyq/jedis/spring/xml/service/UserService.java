@@ -5,6 +5,8 @@ import org.jtyq.jedis.spring.xml.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
+
 @Service
 public class UserService {
 
@@ -13,5 +15,9 @@ public class UserService {
 
     public User findUserById(String userId){
         return  userDao.findUserBydId(userId);
+    }
+
+    public Map<String,User> findAllUsers(){
+        return userDao.findAllUsers();
     }
 }

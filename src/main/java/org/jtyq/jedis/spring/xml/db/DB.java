@@ -47,4 +47,8 @@ public class DB {
     public static User findUser(String id) {
         return dbs.get(id);
     }
+
+    public static Map<String,User> findAllUser(){
+        return dbs;
+    }
 }
